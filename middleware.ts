@@ -1,7 +1,11 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+
 export async function middleware(request: NextRequest) {
+
+    console.log("DEBUG URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+
     let response = NextResponse.next({
         request: {
             headers: request.headers,
